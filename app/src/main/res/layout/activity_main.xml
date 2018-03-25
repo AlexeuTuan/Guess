@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
+    tools:context="alexeutuan.myapplication.MainActivity">
+
+    <alexeutuan.myapplication.SurfaceHelper
+        android:layout_width="fill_parent"
+        android:layout_height="360dp"
+        android:id="@+id/surfaceView"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RED"
+        android:id="@+id/bred"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/bblue" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BLUE"
+        android:id="@+id/bblue"
+        android:layout_above="@+id/bblack"
+        android:layout_toStartOf="@+id/byellow" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="YELLOW"
+        android:id="@+id/byellow"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BLACK"
+        android:id="@+id/bblack"
+        android:layout_below="@+id/bred"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/bblue" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GRN"
+        android:id="@+id/bgreen"
+        android:layout_below="@+id/bblue"
+        android:layout_alignStart="@+id/bblue"
+        android:layout_alignEnd="@+id/bblue" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WHITE"
+        android:id="@+id/bwhite"
+        android:layout_below="@+id/byellow"
+        android:layout_alignEnd="@+id/byellow"
+        android:layout_toEndOf="@+id/bgreen" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:id="@+id/bOkMain"
+        android:layout_alignBottom="@+id/bwhite"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/byellow"
+        android:layout_toEndOf="@+id/byellow" />
+
+</RelativeLayout>
