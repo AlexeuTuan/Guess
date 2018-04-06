@@ -84,7 +84,7 @@ public class AuthActivity extends AppCompatActivity {
                 break;
             case 2:
                 Toast.makeText(this,"Спасибо за вклад в банк картинок!",Toast.LENGTH_SHORT).show();
-                addPicture.setEnabled(false);
+                // addPicture.setEnabled(false);
                 break;
         }
     }

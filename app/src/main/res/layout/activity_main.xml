@@ -13,9 +13,10 @@
     <alexeutuan.myapplication.SurfaceHelper
         android:layout_width="fill_parent"
         android:layout_height="360dp"
-        android:id="@+id/surfaceView"
+        android:id="@+id/surfaceViewMain"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/bOkMain" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -25,7 +26,8 @@
         android:id="@+id/bred"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/bblue" />
+        android:layout_toStartOf="@+id/bblue"
+        android:onClick="onClick" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -34,7 +36,8 @@
         android:text="BLUE"
         android:id="@+id/bblue"
         android:layout_above="@+id/bblack"
-        android:layout_toStartOf="@+id/byellow" />
+        android:layout_toStartOf="@+id/byellow"
+        android:onClick="onClick" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -43,7 +46,8 @@
         android:text="YELLOW"
         android:id="@+id/byellow"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="onClick" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -53,7 +57,8 @@
         android:id="@+id/bblack"
         android:layout_below="@+id/bred"
         android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/bblue" />
+        android:layout_toStartOf="@+id/bblue"
+        android:onClick="onClick" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -63,7 +68,8 @@
         android:id="@+id/bgreen"
         android:layout_below="@+id/bblue"
         android:layout_alignStart="@+id/bblue"
-        android:layout_alignEnd="@+id/bblue" />
+        android:layout_alignEnd="@+id/bblue"
+        android:onClick="onClick" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -73,7 +79,8 @@
         android:id="@+id/bwhite"
         android:layout_below="@+id/byellow"
         android:layout_alignEnd="@+id/byellow"
-        android:layout_toEndOf="@+id/bgreen" />
+        android:layout_toEndOf="@+id/bgreen"
+        android:onClick="onClick" />
 
     <Button
         android:layout_width="wrap_content"
@@ -83,6 +90,7 @@
         android:layout_alignBottom="@+id/bwhite"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/byellow"
-        android:layout_toEndOf="@+id/byellow" />
+        android:layout_toEndOf="@+id/byellow"
+        android:onClick="onClick" />
 
 </RelativeLayout>
