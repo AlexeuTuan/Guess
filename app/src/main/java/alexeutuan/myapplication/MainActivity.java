@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
                 JSONObject jsonFile = new JSONObject();
                 jsonFile.put("coordinateX",sHelper.coordinateX);
                 jsonFile.put("coordinateY", sHelper.coordinateY);
+                System.out.println(jsonFile.toString());
+                RequestTask requestTask = new RequestTask(jsonFile);
+                // requestTask.execute();
                 setResult(2);
                 finish();
                 break;
