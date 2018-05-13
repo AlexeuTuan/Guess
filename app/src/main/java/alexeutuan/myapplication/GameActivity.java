@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -12,6 +13,8 @@ public class GameActivity extends AppCompatActivity {
     int false_returnes;
 
     Button ok;
+    EditText imageName;
+    Button accept;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +33,14 @@ public class GameActivity extends AppCompatActivity {
                 i.putExtra("false_returnes", false_returnes);
                 setResult(RESULT_OK, i);
                 finish();
+            }
+        });
+
+        accept = (Button) findViewById(R.id.bAccept);
+        accept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Обработка ответа
             }
         });
 

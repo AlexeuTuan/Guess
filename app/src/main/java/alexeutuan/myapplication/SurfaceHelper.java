@@ -6,18 +6,15 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import org.json.JSONArray;
 
 public class SurfaceHelper extends SurfaceView implements SurfaceHolder.Callback {
 
     DrawThread drawThread;
     ClassPoint cPoint = new ClassPoint();
-    JSONArray coordinateX = new JSONArray();
-    JSONArray coordinateY = new JSONArray();
+    String arr = "1";
 
     public SurfaceHelper(Context context,AttributeSet attributeSet) {
         super(context,attributeSet);
@@ -49,12 +46,9 @@ public class SurfaceHelper extends SurfaceView implements SurfaceHolder.Callback
         cPoint.x[cPoint.i] = (int) event.getX();
         cPoint.y[cPoint.i] = (int) event.getY();
 
-        // Элементы массива добавляем в JsonArray
-        coordinateX.put(cPoint.x[cPoint.i]);
-        coordinateY.put(cPoint.y[cPoint.i]);
-        Log.d("TAG", "touchEv " + cPoint.i + " " + cPoint.x[cPoint.i] + " " + cPoint.y[cPoint.i]);
-
+        arr += "," + cPoint.x[cPoint.i] + "," + cPoint.y[cPoint.i];
         cPoint.i++; // переход к следующему элементу массива
+
         return super.onTouchEvent(event);
     }
 
@@ -66,15 +60,12 @@ public class SurfaceHelper extends SurfaceView implements SurfaceHolder.Callback
             try {
                 drawThread.join();
                 retry = false;
-            } catch (InterruptedException e) {
-                //
-            }
+            } catch (InterruptedException e) {/* ... */}
         }
     }
 
     public class DrawThread extends Thread {
 
-        // public int colorPoint = 5;
         Path path = new Path();
         private SurfaceHolder surfaceHolder;
         volatile boolean running = true;//флаг для остановки потока

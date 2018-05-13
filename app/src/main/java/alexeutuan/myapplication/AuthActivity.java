@@ -46,6 +46,8 @@ public class AuthActivity extends AppCompatActivity {
                 Intent i = new Intent(AuthActivity.this, GameActivity.class);
                 i.putExtra("true_returnes", true_returnes);
                 i.putExtra("false_returnes", false_returnes);
+                RequestTask requestTask = new RequestTask("2");
+                // requestTask.execute();
                 startActivityForResult(i, 1);
             }
         });
@@ -83,7 +85,7 @@ public class AuthActivity extends AppCompatActivity {
                 setTrueFalse();
                 break;
             case 2:
-                Toast.makeText(this,"Спасибо за вклад в банк картинок!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Картинка добавлена!",Toast.LENGTH_SHORT).show();
                 // addPicture.setEnabled(false);
                 break;
         }

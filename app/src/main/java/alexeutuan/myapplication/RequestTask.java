@@ -6,14 +6,12 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONObject;
-import org.apache.http.HttpEntity;
 
 class RequestTask extends AsyncTask<String, String, String> {
 
-    JSONObject jsonObject;
-    public RequestTask(Object obj) {
-        jsonObject = (JSONObject) obj;
+    String arr;
+    public RequestTask(String arr) {
+        this.arr = arr;
     }
 
     @Override
@@ -29,10 +27,10 @@ class RequestTask extends AsyncTask<String, String, String> {
             //будем передавать два параметра
             //передаем параметры из наших текстбоксов
             //получаем ответ от сервера            //собераем их вместе и посылаем на сервер
-            postMethod.setEntity(new StringEntity(jsonObject.toString()));
+            postMethod.setEntity(new StringEntity(arr));
             String response = hc.execute(postMethod, res);
         } catch (Exception e) {
-            System.out.println("Exp=" + e);
+            System.out.println("Excep=" + e);
         }
         return null;
     }
