@@ -10,6 +10,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 class RequestTask extends AsyncTask<String, String, String> {
 
     String arr;
+    String response;
     public RequestTask(String arr) {
         this.arr = arr;
     }
@@ -18,17 +19,14 @@ class RequestTask extends AsyncTask<String, String, String> {
     protected String doInBackground(String... params) {
 
         try {
-            String url = "http://192.168.0.5:8888";
+            String url = "http://192.168.0.5:8888/servlet";
             //создаем запрос на сервер
             DefaultHttpClient hc = new DefaultHttpClient();
             ResponseHandler<String> res = new BasicResponseHandler();
             //он у нас будет посылать post запрос
             HttpPost postMethod = new HttpPost(url);
-            //будем передавать два параметра
-            //передаем параметры из наших текстбоксов
-            //получаем ответ от сервера            //собераем их вместе и посылаем на сервер
             postMethod.setEntity(new StringEntity(arr));
-            String response = hc.execute(postMethod, res);
+            response = hc.execute(postMethod, res);
         } catch (Exception e) {
             System.out.println("Excep=" + e);
         }

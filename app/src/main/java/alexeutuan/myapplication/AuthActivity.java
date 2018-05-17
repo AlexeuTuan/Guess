@@ -46,8 +46,6 @@ public class AuthActivity extends AppCompatActivity {
                 Intent i = new Intent(AuthActivity.this, GameActivity.class);
                 i.putExtra("true_returnes", true_returnes);
                 i.putExtra("false_returnes", false_returnes);
-                RequestTask requestTask = new RequestTask("2");
-                // requestTask.execute();
                 startActivityForResult(i, 1);
             }
         });

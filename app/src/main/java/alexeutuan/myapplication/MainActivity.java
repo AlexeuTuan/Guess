@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                         sHelper.drawThread.running = false;
                         Log.d("Debug", sHelper.arr);
                         RequestTask requestTask = new RequestTask(sHelper.arr + "," + imageName.getText());
-                        // requestTask.execute();
+                        requestTask.execute();
                         setResult(2);
                         finish();
                     }
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     @Override
-    protected void onStop() {
+     protected void onStop() {
         super.onStop();
         sHelper.drawThread.running = false;
     }
